@@ -2,7 +2,7 @@ import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.components import output, sensor
 import esphome.pins as pins
-from esphome.const import CONF_ID, CONF_SENSOR
+from esphome.const import CONF_ID, CONF_SENSOR, STATE_CLASS_MEASUREMENT
 
 CONF_CS_PIN = "cs_pin"
 CONF_SCK_PIN = "sck_pin"
@@ -23,7 +23,7 @@ CONFIG_SCHEMA = (
             cv.Optional(CONF_SENSOR): sensor.sensor_schema(
                 unit_of_measurement="",
                 accuracy_decimals=3,
-                state_class=sensor.STATE_CLASS_MEASUREMENT,
+                state_class=STATE_CLASS_MEASUREMENT,
             ),
         }
     )
